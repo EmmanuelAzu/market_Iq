@@ -2,18 +2,17 @@
 
 Next.js on **Vercel**, data on **Supabase**.
 
-## 1. Create or reuse the Supabase project
+## 1. The Supabase project
 
-The Supabase free plan allows **2 active projects**, so the four apps are paired
-without clashing table names:
+All four apps share **one** Supabase project (`sharewallet-portfolio`), which
+keeps them inside the free plan's project limit. Their table names don't clash.
+CodeSim's profile table is called `codesim_profiles` so it can sit next to
+ShareWallet's `profiles`.
 
-| Supabase project | Apps |
-| --- | --- |
-| `sharewallet-portfolio` | ShareWallet + Portfolio |
-| `codesim-marketiq` | CodeSim + MarketIQ |
-
-This app uses `codesim-marketiq` (shared with CodeSim). (ShareWallet and CodeSim both define `profiles`, so
-they must live in different projects.)
+In the Supabase SQL Editor, run the setup once, in this order:
+`sharewallet-portfolio.sql` (ShareWallet + Portfolio), then
+`add-codesim-marketiq.sql` (CodeSim + MarketIQ). Both are built from the
+migration files listed below.
 
 ## 2. Apply the database schema
 
