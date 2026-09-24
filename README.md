@@ -18,6 +18,8 @@ npx supabase db push         # applies supabase/migrations/*
 npm run dev
 ```
 
+Deploying to Vercel + Supabase: see [DEPLOY.md](DEPLOY.md).
+
 Requires Node 22+ (yahoo-finance2 v4). Enable email magic links in Supabase and
 allow-list `<site>/auth/callback`.
 
